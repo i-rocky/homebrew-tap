@@ -1,26 +1,26 @@
 class Dockerx < Formula
   desc "Hardened Docker dev environment launcher"
   homepage "https://github.com/i-rocky/dockerx"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/i-rocky/dockerx/releases/download/v0.1.1/dockerx-darwin-aarch64-v0.1.1.tar.gz"
-      sha256 "55c7db297af13125a04e62ba66520231a6b9dce4d690c3fda411e672c598eca4"
+      url "https://github.com/i-rocky/dockerx/releases/download/v0.1.2/dockerx-darwin-aarch64-v0.1.2.tar.gz"
+      sha256 "8593e5374d1ea5c36cd639744d93153b648c74ec7a6811cdff3940d70736e3b9"
     else
-      url "https://github.com/i-rocky/dockerx/releases/download/v0.1.1/dockerx-darwin-x86_64-v0.1.1.tar.gz"
-      sha256 "96953b6fb5ca6519da55dbe66192e489693fbb6b0355879de40c547aab8fc989"
+      url "https://github.com/i-rocky/dockerx/releases/download/v0.1.2/dockerx-darwin-x86_64-v0.1.2.tar.gz"
+      sha256 "e407f1b7417140b0cc4344356fb9a9c8c4d608393d2d98ecafc9b89a5872ca3b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/i-rocky/dockerx/releases/download/v0.1.1/dockerx-linux-aarch64-v0.1.1.tar.gz"
-      sha256 "36a01e2e600ca933d5975468f3e11a945c5518880ab46aab94bbc8531a878174"
+      url "https://github.com/i-rocky/dockerx/releases/download/v0.1.2/dockerx-linux-aarch64-v0.1.2.tar.gz"
+      sha256 "bb3c9dade22178d0d52a2e55b3344fd3415349f4e492417c97c11306a50ac048"
     else
-      url "https://github.com/i-rocky/dockerx/releases/download/v0.1.1/dockerx-linux-x86_64-v0.1.1.tar.gz"
-      sha256 "2db5c9872e5bb1a40b617f7de674207c6c8b91228c939ea99371e0b7e169740b"
+      url "https://github.com/i-rocky/dockerx/releases/download/v0.1.2/dockerx-linux-x86_64-v0.1.2.tar.gz"
+      sha256 "56e1a72bce831aa142cb30607cd3881c4612fcdde0cc7f9b5255ea4a8e90c051"
     end
   end
 
