@@ -1,26 +1,26 @@
 class Pixr < Formula
   desc "Image resizing and format conversion CLI"
   homepage "https://github.com/i-rocky/pixr"
-  version "1.0.10"
+  version "1.0.11"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/i-rocky/pixr/releases/download/v1.0.10/pixr-darwin-aarch64-v1.0.10"
-      sha256 "6ab9c94fad28f3c927981fd5e5826843e71a29d70bdf9ed3db64e7f33d76d0e1"
+      url "https://github.com/i-rocky/pixr/releases/download/v1.0.11/pixr-darwin-aarch64-v1.0.11"
+      sha256 "739f0dbe05001dd4923ae71b652c459c40ebef8b0a6d5f08e235d7ee8c94584a"
     else
-      url "https://github.com/i-rocky/pixr/releases/download/v1.0.10/pixr-darwin-x86_64-v1.0.10"
-      sha256 "f03b17683caeb70b650c2efc2639bdccfa4b26e11073185d19d4dc7d620c35e6"
+      url "https://github.com/i-rocky/pixr/releases/download/v1.0.11/pixr-darwin-x86_64-v1.0.11"
+      sha256 "8fe223fa41985acdebdc844ecdb70b355b52698be0ea892c726cfd0fb0bbbbd6"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/i-rocky/pixr/releases/download/v1.0.10/pixr-linux-aarch64-v1.0.10"
-      sha256 "732f03073bd7e7f561c0cd36bdf68e11ec6a515ced448dc04ae58ed26b060a98"
+      url "https://github.com/i-rocky/pixr/releases/download/v1.0.11/pixr-linux-aarch64-v1.0.11"
+      sha256 "7ade53fa41bb41d06ad75a0ef76156730c57a4defaced4db23bc3dd0c5594b4c"
     else
-      url "https://github.com/i-rocky/pixr/releases/download/v1.0.10/pixr-linux-x86_64-v1.0.10"
-      sha256 "480aad6d3ab2abf4e23112d3ceff4b5923e5dd07dbfcf11ae912d65c909f084e"
+      url "https://github.com/i-rocky/pixr/releases/download/v1.0.11/pixr-linux-x86_64-v1.0.11"
+      sha256 "0f3f000b1ca26f9d2d285199af53bd5d98c0b450872094bd1985215af317ef5e"
     end
   end
 
