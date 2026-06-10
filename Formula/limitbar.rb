@@ -1,26 +1,26 @@
 class Limitbar < Formula
   desc "Always-visible usage meter for LLM rate-limit windows"
   homepage "https://i-rocky.github.io/limitbar/"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/i-rocky/limitbar/releases/download/v0.1.0/limitbar-darwin-aarch64-v0.1.0.tar.gz"
-      sha256 "43e78cd61cd6ab357c1180fd54213ded72b380c88123030530ca65c11d734d10"
+      url "https://github.com/i-rocky/limitbar/releases/download/v0.2.0/limitbar-darwin-aarch64-v0.2.0.tar.gz"
+      sha256 "9f3d2b5cb9dd7e2c7232e30ac3851d469166d12b34dd0c66ce1d8a26c7fdfdbb"
     else
-      url "https://github.com/i-rocky/limitbar/releases/download/v0.1.0/limitbar-darwin-x86_64-v0.1.0.tar.gz"
-      sha256 "d586ad8216affba41a0a7b66d9b7cf59b158e6fba98ec3d0c6d8c4e06d40000d"
+      url "https://github.com/i-rocky/limitbar/releases/download/v0.2.0/limitbar-darwin-x86_64-v0.2.0.tar.gz"
+      sha256 "9d20b82f34962596ddf36121420c844bf9a9b5d88cf61ac41b3235f2f6b6ca95"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/i-rocky/limitbar/releases/download/v0.1.0/limitbar-linux-aarch64-v0.1.0.tar.gz"
-      sha256 "19d5aceb822cfa10d086afadc3800003ac82de1213dc6e4563ca2a44d621242f"
+      url "https://github.com/i-rocky/limitbar/releases/download/v0.2.0/limitbar-linux-aarch64-v0.2.0.tar.gz"
+      sha256 "f6bbb5affa506858e6a99a37d96bc5b287a4634cc29f2f3158f29be9e20799fb"
     else
-      url "https://github.com/i-rocky/limitbar/releases/download/v0.1.0/limitbar-linux-x86_64-v0.1.0.tar.gz"
-      sha256 "6d24d4888a210e73d2015b0787e8f97f6d1e75d0f33dd79d38d756831816b834"
+      url "https://github.com/i-rocky/limitbar/releases/download/v0.2.0/limitbar-linux-x86_64-v0.2.0.tar.gz"
+      sha256 "a34e3c2f52482a7c00adafdc290042208ffbac763551377e8e1e6d7de3f74115"
     end
   end
 
