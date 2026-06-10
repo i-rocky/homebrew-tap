@@ -17,10 +17,10 @@ class Pixr < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/i-rocky/pixr/releases/download/v1.0.10/pixr-linux-aarch64-v1.0.10"
-      sha256 "601aadd393ebaaa38be1c36efd40588f27d9e8b49b655ed81b9575b6ae950210"
+      sha256 "732f03073bd7e7f561c0cd36bdf68e11ec6a515ced448dc04ae58ed26b060a98"
     else
       url "https://github.com/i-rocky/pixr/releases/download/v1.0.10/pixr-linux-x86_64-v1.0.10"
-      sha256 "c06d49d4c9472af9ebabcb7d8a1206acc2fb5ffd665e19411de582ee07f1b4a0"
+      sha256 "480aad6d3ab2abf4e23112d3ceff4b5923e5dd07dbfcf11ae912d65c909f084e"
     end
   end
 

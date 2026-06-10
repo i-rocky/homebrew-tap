@@ -10,10 +10,10 @@ class Caffeinate < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/i-rocky/caffeinate/releases/download/v0.1.1/caffeinate-linux-aarch64-v0.1.1.tar.gz"
-      sha256 "4bb6416ac7c13db05bed82ae91696eded04b774a0a05592207816f3a7d4237c0"
+      sha256 "38a418a640341877c2e34f296c060d8aac3f072316e05c38e116266e277ae478"
     else
       url "https://github.com/i-rocky/caffeinate/releases/download/v0.1.1/caffeinate-linux-x86_64-v0.1.1.tar.gz"
-      sha256 "e43a0e9b7df447053ad5cb0ba750c4f7e907a936fc8fe6c672eec27153ec72be"
+      sha256 "1dc6fbdf9166d68f89ac5e9a4a56676c5004a3e48d095283804e3e256c430ce3"
     end
   end
 
