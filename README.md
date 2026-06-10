@@ -7,7 +7,9 @@ Homebrew tap for Rocky CLI tools.
 ```sh
 brew tap i-rocky/tap
 brew install dockerx
-brew install caffeinate
+brew install caffeinate # Linux only; macOS ships caffeinate natively
+brew install uuidgen
+brew install pixr
 ```
 
 ## How updates work
@@ -16,6 +18,8 @@ This tap updates itself by scanning the latest GitHub release for:
 
 - `i-rocky/dockerx`
 - `i-rocky/caffeinate`
+- `i-rocky/uuid` (published as `uuidgen`)
+- `i-rocky/pixr`
 
 The updater workflow runs on a schedule and on manual dispatch, regenerates
 `Formula/*.rb` from release assets and checksums, and commits changes.

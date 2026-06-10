@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="i-rocky/dockerx"
+REPO="i-rocky/pixr"
 API_URL="https://api.github.com/repos/${REPO}/releases/latest"
 
 tmp_json="$(mktemp)"
@@ -43,10 +43,11 @@ sha_for() {
   echo "${sha}"
 }
 
-darwin_amd64_name="dockerx-darwin-x86_64-${tag}.tar.gz"
-darwin_arm64_name="dockerx-darwin-aarch64-${tag}.tar.gz"
-linux_amd64_name="dockerx-linux-x86_64-${tag}.tar.gz"
-linux_arm64_name="dockerx-linux-aarch64-${tag}.tar.gz"
+# pixr releases ship bare binaries, not archives.
+darwin_amd64_name="pixr-darwin-x86_64-${tag}"
+darwin_arm64_name="pixr-darwin-aarch64-${tag}"
+linux_amd64_name="pixr-linux-x86_64-${tag}"
+linux_arm64_name="pixr-linux-aarch64-${tag}"
 
 darwin_amd64_sha="$(sha_for "${darwin_amd64_name}")"
 darwin_arm64_sha="$(sha_for "${darwin_arm64_name}")"
@@ -54,9 +55,9 @@ linux_amd64_sha="$(sha_for "${linux_amd64_name}")"
 linux_arm64_sha="$(sha_for "${linux_arm64_name}")"
 
 mkdir -p Formula
-cat > Formula/dockerx.rb <<EOF
-class Dockerx < Formula
-  desc "Hardened Docker dev environment launcher"
+cat > Formula/pixr.rb <<EOF2
+class Pixr < Formula
+  desc "Image resizing and format conversion CLI"
   homepage "https://github.com/${REPO}"
   version "${version}"
   license "MIT"
@@ -82,13 +83,15 @@ class Dockerx < Formula
   end
 
   def install
-    bin.install "dockerx"
+    arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    os = OS.mac? ? "darwin" : "linux"
+    bin.install "pixr-#{os}-#{arch}-v#{version}" => "pixr"
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}/dockerx --version")
+    assert_predicate bin/"pixr", :exist?
   end
 end
-EOF
+EOF2
 
-echo "Updated Formula/dockerx.rb to ${version}"
+echo "Updated Formula/pixr.rb to ${version}"

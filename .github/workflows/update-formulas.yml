@@ -23,6 +23,8 @@ jobs:
           sudo apt-get install -y jq
           bash .github/scripts/update-dockerx-formula.sh
           bash .github/scripts/update-caffeinate-formula.sh
+          bash .github/scripts/update-uuidgen-formula.sh
+          bash .github/scripts/update-pixr-formula.sh
 
       - name: Commit changes
         shell: bash

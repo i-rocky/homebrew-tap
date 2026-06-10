@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="i-rocky/dockerx"
+REPO="i-rocky/uuid"
 API_URL="https://api.github.com/repos/${REPO}/releases/latest"
 
 tmp_json="$(mktemp)"
@@ -43,10 +43,10 @@ sha_for() {
   echo "${sha}"
 }
 
-darwin_amd64_name="dockerx-darwin-x86_64-${tag}.tar.gz"
-darwin_arm64_name="dockerx-darwin-aarch64-${tag}.tar.gz"
-linux_amd64_name="dockerx-linux-x86_64-${tag}.tar.gz"
-linux_arm64_name="dockerx-linux-aarch64-${tag}.tar.gz"
+darwin_amd64_name="uuid-darwin-x86_64-${tag}.tar.gz"
+darwin_arm64_name="uuid-darwin-aarch64-${tag}.tar.gz"
+linux_amd64_name="uuid-linux-x86_64-${tag}.tar.gz"
+linux_arm64_name="uuid-linux-aarch64-${tag}.tar.gz"
 
 darwin_amd64_sha="$(sha_for "${darwin_amd64_name}")"
 darwin_arm64_sha="$(sha_for "${darwin_arm64_name}")"
@@ -54,9 +54,9 @@ linux_amd64_sha="$(sha_for "${linux_amd64_name}")"
 linux_arm64_sha="$(sha_for "${linux_arm64_name}")"
 
 mkdir -p Formula
-cat > Formula/dockerx.rb <<EOF
-class Dockerx < Formula
-  desc "Hardened Docker dev environment launcher"
+cat > Formula/uuidgen.rb <<EOF2
+class Uuidgen < Formula
+  desc "uuidgen-compatible UUID generator (v1/v3/v4/v5)"
   homepage "https://github.com/${REPO}"
   version "${version}"
   license "MIT"
@@ -82,13 +82,13 @@ class Dockerx < Formula
   end
 
   def install
-    bin.install "dockerx"
+    bin.install "uuidgen"
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}/dockerx --version")
+    assert_match(/\A[0-9a-fA-F-]{36}\s*\z/, shell_output("#{bin}/uuidgen"))
   end
 end
-EOF
+EOF2
 
-echo "Updated Formula/dockerx.rb to ${version}"
+echo "Updated Formula/uuidgen.rb to ${version}"

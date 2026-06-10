@@ -43,13 +43,10 @@ sha_for() {
   echo "${sha}"
 }
 
-darwin_amd64_name="caffeinate-darwin-x86_64-${tag}.tar.gz"
-darwin_arm64_name="caffeinate-darwin-aarch64-${tag}.tar.gz"
+# macOS ships caffeinate natively; releases are Linux/Windows only.
 linux_amd64_name="caffeinate-linux-x86_64-${tag}.tar.gz"
 linux_arm64_name="caffeinate-linux-aarch64-${tag}.tar.gz"
 
-darwin_amd64_sha="$(sha_for "${darwin_amd64_name}")"
-darwin_arm64_sha="$(sha_for "${darwin_arm64_name}")"
 linux_amd64_sha="$(sha_for "${linux_amd64_name}")"
 linux_arm64_sha="$(sha_for "${linux_arm64_name}")"
 
@@ -61,15 +58,8 @@ class Caffeinate < Formula
   version "${version}"
   license "MIT"
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "${base_url}/${darwin_arm64_name}"
-      sha256 "${darwin_arm64_sha}"
-    else
-      url "${base_url}/${darwin_amd64_name}"
-      sha256 "${darwin_amd64_sha}"
-    end
-  end
+  # macOS ships caffeinate natively; this formula is Linux-only on purpose.
+  depends_on :linux
 
   on_linux do
     if Hardware::CPU.arm?
