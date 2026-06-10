@@ -25,6 +25,7 @@ jobs:
           bash .github/scripts/update-caffeinate-formula.sh
           bash .github/scripts/update-uuidgen-formula.sh
           bash .github/scripts/update-pixr-formula.sh
+          bash .github/scripts/update-limitbar-formula.sh
 
       - name: Commit changes
         shell: bash
